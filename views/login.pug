@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title Simple login
+    body
+        h1 Please Login On
+        form(method="POST", action="/user")
+            input(type="hidden", name="_method", valur="PUT")
+            p Name 
+            input(type="text", name="name")
+            p Email
+            input(type="email", name="email")
+            p
+            input(type="submit")    
