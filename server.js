@@ -22,11 +22,22 @@ app.get('/first-template', function (req, res) {
 });
 
 app.get('/login', function (req, res) {
-    res.render('login', {
-        user:
-            { name: "Tvardy ;)", age: "20" }
-    });
+    res.render('login')
 });
+
+
+app.post('/login', function (req, res, next) {
+
+    if (req.body.username) {
+        res.render('after');
+    } else {
+        req.send('Error, username is incorrect.');
+        res.render('login');
+    }
+
+});
+
+
 
 app.listen(3000);
 app.use(function (req, res, next) {

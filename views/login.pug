@@ -1,14 +1,12 @@
 doctype html
 html
     head
-        title Simple login
+        title Simple authentication example
     body
-        h1 Please Login On
-        form(method="POST", action="/user")
-            input(type="hidden", name="_method", valur="PUT")
-            p Name 
-            input(type="text", name="name")
-            p Email
-            input(type="email", name="email")
+        h1 Simple authentication example
+        h3 Please Login
+        form(method="POST")
+            p Username 
+            input(type="text", value="username")
             p
-            input(type="submit")    
+            input(type="submit" value="login")
