@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
-
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'pug');
 app.set('views', './views');
 
@@ -25,19 +26,14 @@ app.get('/login', function (req, res) {
     res.render('login')
 });
 
-
 app.post('/login', function (req, res, next) {
-
+    console.log(req.body.username)
     if (req.body.username) {
-        res.render('after');
+        res.render('after', { name: req.body.username });
     } else {
-        req.send('Error, username is incorrect.');
-        res.render('login');
+        res.send('Error, username is incorrect.');
     }
-
 });
-
-
 
 app.listen(3000);
 app.use(function (req, res, next) {

@@ -5,8 +5,8 @@ html
     body
         h1 Simple authentication example
         h3 Please Login
-        form(method="POST")
+        form(method="POST", action="/login")
             p Username 
-            input(type="text", value="username")
+            input(type="text", name="username")
             p
-            input(type="submit" value="login")
+            input(type="submit", name="submit", value="login")
